@@ -17,7 +17,6 @@ function ResultPage() {
             <div className="sentiment-result">
               <p><strong>Review:</strong> {review}</p> {/* Display the original review or transcribed text */}
               <p><strong>Sentiment Label:</strong> {sentiment.label}</p> {/* Display the sentiment label */}
-              <p><strong>Sentiment Score:</strong> {sentiment.score}</p> {/* Display the sentiment score */}
             </div>
           ) : (
             <p>No sentiment data available.</p>
