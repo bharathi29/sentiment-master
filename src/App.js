@@ -56,20 +56,27 @@ function HomePage() {
 
           {/* Form to input review or upload audio */}
           <form className="review-form" onSubmit={handleSubmit}>
-            <textarea
-              className="review-input"
-              value={review}
-              onChange={(e) => setReview(e.target.value)}
-              placeholder="Type your review here"
-              disabled={loading || audioFile !== null}
-            />
+            {/* Wrapper for text input */}
+            <div className="input-wrapper">
+              <textarea
+                className="review-input"
+                value={review}
+                onChange={(e) => setReview(e.target.value)}
+                placeholder="Type your review here"
+                disabled={loading || audioFile !== null}
+              />
+            </div>
 
-            <input
-              type="file"
-              accept="audio/mp3"
-              onChange={(e) => setAudioFile(e.target.files[0])}
-              disabled={loading || review !== ''}
-            />
+            {/* Wrapper for file input */}
+            <div className="input-wrapper">
+              <input
+                className="audio-input"
+                type="file"
+                accept="audio/mp3"
+                onChange={(e) => setAudioFile(e.target.files[0])}
+                disabled={loading || review !== ''}
+              />
+            </div>
 
             <button className="submit-button" type="submit" disabled={loading}>
               {loading ? 'Submitting...' : 'Analyze'}{' '}
